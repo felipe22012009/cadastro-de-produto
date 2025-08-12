@@ -18,4 +18,14 @@ def listar_produtos():
             for linha in arquivo:
                 nome, preco, categoria = linha.strip().strip(";")
                 print(f"Produto: {nome} | Preço: r${preco} | Categoria: {categoria}")
-    except
+    except FileNotFoundError:
+        print("Nenhum produto cadastrado ainda.") 
+
+while True:
+    print("\n1 - cadastror produto")
+    print("2 - listar produtros")
+    print("0 -  Sair")
+    opcao = input("Escolha: ")
+    
+    if opcao == "1":
+        produto = cadastro_produto()
